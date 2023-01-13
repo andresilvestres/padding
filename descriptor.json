@@ -1,0 +1,76 @@
+{
+  "name": "padding",
+  "type": "flogo:function",
+  "version": "0.0.5",
+  "title": "padding Functions",
+  "description": "padding Functions",
+  "homepage": "https://github.com/andresilvestres/padding",
+  "functions": [
+    {
+      "name": "paddingRight",
+      "description": "create paddingRight",
+      "example": "(String result = String.pad (text, 7, X) >> Result is>> result : textXXX)",
+      "args": [
+        {
+          "name": "value",
+          "type": "string"
+        },
+		{
+          "name": "length",
+		  "type": "int"
+        },
+		{
+          "name": "padCharacter",
+          "type": "string"
+        }
+      ],
+      "return": {
+        "type": "string"
+      }
+    },
+    {
+      "name": "paddingLeft",
+      "description": "create paddingLeft",
+      "example": "(String result = String.pad (text, 7, X) >> Result is>> result : textXXX)",
+      "args": [
+        {
+          "name": "value",
+          "type": "string"
+        },
+		{
+          "name": "length",
+		  "type": "int"
+        },
+		{
+          "name": "padCharacter",
+          "type": "string"
+        }
+      ],
+      "return": {
+        "type": "string"
+      }
+    },
+    {
+      "name": "paddingZeros",
+      "description": "create paddingZeros",
+      "example": "(String result = String.pad (text, 7, X) >> Result is>> result : textXXX)",
+      "args": [
+        {
+          "name": "value",
+          "type": "string"
+        },
+		{
+          "name": "length",
+		  "type": "int"
+        },
+		{
+          "name": "padCharacter",
+          "type": "string"
+        }
+      ],
+      "return": {
+        "type": "string"
+      }
+    }
+  ]
+}
