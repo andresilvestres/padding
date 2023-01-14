@@ -25,13 +25,13 @@ func (fnPaddingLeft) Sig() (paramTypes []data.Type, isVariadic bool) {
 func (fnPaddingLeft) Eval(params ...interface{}) (interface{}, error) {
 
 	//Padding Left
-	//fmt.Println("'%4dkm'", params)
+	fmt.Println("testing...................")
 	//fmt.Printf("'%4dkm'", params)
 	//return params, fmt.Errorf("Paddingleft")
 
-	if params == nil {
+	//if params == nil {
 		//Do nothing
-		return 0, nil
-	}
+		//return 0, nil
+	//}
 	return "...ERROR...", fmt.Errorf("fnPaddingLeft function must have three arguments")
 }
