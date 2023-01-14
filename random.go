@@ -1,4 +1,4 @@
-package number
+package padding
 
 import (
 	"github.com/project-flogo/core/data/coerce"
