@@ -17,7 +17,32 @@
         },
 		{
           "name": "length",
-	  "type": "int"
+	        "type": "int"
+        },
+		{
+          "name": "padCharacter",
+          "type": "string"
+        }
+      ],
+      "return": {
+        "type": "string"
+      },
+      "display": {
+	 "visible": true
+      }
+    },
+    {
+      "name": "paddingRight",
+      "description": "create paddingRight",
+      "example": "(String result = String.pad (text, 7, X) >> Result is>> result : textXXX)",
+      "args": [
+        {
+          "name": "value",
+          "type": "string"
+        },
+		{
+          "name": "length",
+	        "type": "int"
         },
 		{
           "name": "padCharacter",
