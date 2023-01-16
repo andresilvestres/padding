@@ -7,28 +7,6 @@
   "homepage": "https://github.com/andresilvestres/padding",
   "functions": [
     {
-      "name": "paddingRight",
-      "description": "create paddingRight",
-      "example": "(String result = String.pad (text, 7, X) >> Result is>> result : textXXX)",
-      "args": [
-        {
-          "name": "value",
-          "type": "string"
-        },
-		{
-          "name": "length",
-		  "type": "int"
-        },
-		{
-          "name": "padCharacter",
-          "type": "string"
-        }
-      ],
-      "return": {
-        "type": "string"
-      }
-    },
-    {
       "name": "paddingLeft",
       "description": "create paddingLeft",
       "example": "(String result = String.pad (text, 7, X) >> Result is>> result : textXXX)",
@@ -39,7 +17,7 @@
         },
 		{
           "name": "length",
-		  "type": "int"
+	  "type": "int"
         },
 		{
           "name": "padCharacter",
@@ -48,42 +26,9 @@
       ],
       "return": {
         "type": "string"
-      }
-    },
-    {
-      "name": "paddingZeros",
-      "description": "create paddingZeros",
-      "example": "(String result = String.pad (text, 7, X) >> Result is>> result : textXXX)",
-      "args": [
-        {
-          "name": "value",
-          "type": "string"
-        },
-		{
-          "name": "length",
-		  "type": "int"
-        },
-		{
-          "name": "padCharacter",
-          "type": "string"
-        }
-      ],
-      "return": {
-        "type": "string"
-      }
-    },
-	{
-      "name": "random",
-      "description": "generate a random number",
-      "example": "number.random(100) => 90",
-      "args": [
-        {
-          "name": "limit",
-          "type": "int"
-        }
-      ],
-      "return": {
-        "type": "int"
+      },
+      "display": {
+	 "visible": true
       }
     }
   ]
