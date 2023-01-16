@@ -2,7 +2,6 @@ package padding
 
 import (
 	"fmt"
-	"math"
 	"strings"
 
 	"github.com/project-flogo/core/data"
@@ -26,20 +25,26 @@ func (s *fnPaddingLeft) Sig() (paramTypes []data.Type, isVariadic bool) {
 
 func (s *fnPaddingLeft) Eval(in ...interface{}) (interface{}, error) {
 
-	var output string
+	//var output string
 
 	value := in[0].(string)
 	length := in[1].(int)
 	padCharacter := in[2].(string)
 
-	//inputLength := len(value)
-	padStringLength := len(padCharacter)
+	fmt.Println("value ", value)
+	fmt.Println("length ", length)
+	fmt.Println("padCharacter ", padCharacter)
 
-	repeat := math.Ceil(float64(1) + (float64(length-padStringLength))/float64(padStringLength))
+	//for i := len(value); i <= length; i++ {
+	//	output = padCharacter + value
+	//}
 
-	//Padding Left
-	output = strings.Repeat(padCharacter, int(repeat)) + value
-	output = output[len(output)-length:]
+	//fmt.Println("output ", output)
+	//return output, fmt.Errorf("fnPaddingLeft function must have three arguments")
 
-	return output, fmt.Errorf("fnPaddingLeft function must have three arguments")
+	var padCountInt = 1 + ((length - len(padCharacter)) / len(padCharacter))
+	var retStr = strings.Repeat(padCharacter, padCountInt) + value
+	fmt.Println("retStr ", retStr[(len(retStr)-length):])
+	return retStr[(len(retStr) - length):], nil
+
 }
