@@ -2,6 +2,8 @@ package padding
 
 import (
 	"fmt"
+	"math"
+	"strings"
 
 	"github.com/project-flogo/core/data"
 	"github.com/project-flogo/core/data/expression/function"
@@ -24,14 +26,20 @@ func (s *fnPaddingLeft) Sig() (paramTypes []data.Type, isVariadic bool) {
 
 func (s *fnPaddingLeft) Eval(in ...interface{}) (interface{}, error) {
 
-	//Padding Left
-	fmt.Println("testing...................")
-	//fmt.Printf("'%4dkm'", params)
-	//return in, fmt.Errorf("Paddingleft")
+	var output string
 
-	//if params == nil {
-		//Do nothing
-		//return 0, nil
-	//}
-	return "...ERROR...", fmt.Errorf("fnPaddingLeft function must have three arguments")
+	value := in[0].(string)
+	length := in[1].(int)
+	padCharacter := in[2].(string)
+
+	//inputLength := len(value)
+	padStringLength := len(padCharacter)
+
+	repeat := math.Ceil(float64(1) + (float64(length-padStringLength))/float64(padStringLength))
+
+	//Padding Left
+	output = strings.Repeat(padCharacter, int(repeat)) + value
+	output = output[len(output)-length:]
+
+	return output, fmt.Errorf(value, length, output)
 }
