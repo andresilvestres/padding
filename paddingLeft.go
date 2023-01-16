@@ -7,27 +7,27 @@ import (
 	"github.com/project-flogo/core/data/expression/function"
 )
 
-func init() {
-	_ = function.Register(&fnPaddingLeft{})
-}
-
 type fnPaddingLeft struct {
 }
 
-func (fnPaddingLeft) Name() string {
-	return "padding"
+func init() {
+	function.Register(&fnPaddingLeft{})
 }
 
-func (fnPaddingLeft) Sig() (paramTypes []data.Type, isVariadic bool) {
-	return []data.Type{data.TypeString}, true
+func (s *fnPaddingLeft) Name() string {
+	return "paddingLeft"
 }
 
-func (fnPaddingLeft) Eval(params ...interface{}) (interface{}, error) {
+func (s *fnPaddingLeft) Sig() (paramTypes []data.Type, isVariadic bool) {
+	return []data.Type{data.TypeString, data.TypeInt, data.TypeString}, false
+}
+
+func (s *fnPaddingLeft) Eval(in ...interface{}) (interface{}, error) {
 
 	//Padding Left
 	fmt.Println("testing...................")
 	//fmt.Printf("'%4dkm'", params)
-	//return params, fmt.Errorf("Paddingleft")
+	//return in, fmt.Errorf("Paddingleft")
 
 	//if params == nil {
 		//Do nothing
