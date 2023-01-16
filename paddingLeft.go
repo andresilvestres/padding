@@ -41,5 +41,5 @@ func (s *fnPaddingLeft) Eval(in ...interface{}) (interface{}, error) {
 	output = strings.Repeat(padCharacter, int(repeat)) + value
 	output = output[len(output)-length:]
 
-	return output, fmt.Errorf(value, length, output)
+	return output, fmt.Errorf("fnPaddingLeft function must have three arguments")
 }
